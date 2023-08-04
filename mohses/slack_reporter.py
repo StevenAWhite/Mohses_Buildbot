@@ -47,7 +47,7 @@ class SlackStatusPush(http.HttpStatusPushBase):
     name = "SlackStatusPush"
     neededDetails = dict(wantProperties=True)
     
-    def __init__(self, *args, channel="#buildbot", oAuth="xoxb-174499064804-1914540108341-J6biEufgHnsQZNIzkgy1HIqr", verbose=False, **kwargs):
+    def __init__(self, *args, channel, oAuth, verbose=False, **kwargs):
       super().__init__(*args, **kwargs)
       self.channel = channel
       self.oAuth = oAuth

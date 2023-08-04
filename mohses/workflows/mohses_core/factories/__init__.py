@@ -1,3 +1,3 @@
 from . import Common
-from . import NightlyFactory
+from . import PeriodicFactory
 from . import TrackedFactory

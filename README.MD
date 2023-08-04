@@ -9,8 +9,11 @@ pip3.9 install virtual env
 python3.9 -m venv path/to/env
 cd path/to/env
 source bin/activate
+
 pip3 install buildbot[bundle]
-lz4
+pip3 insall buildbot-badges
+pip3 install lz4
+
 Edit specifics in biogears/buildbot.py
 buildbot start
 Each build-worker will need to then be setup with a python3.9 virtual environent with buildbot-worker Each machine including master will need some method of starting the services at startup to avoid disruption and if you are using ssh to clone for stash you will need to setup ssh-keys for each machine on a profile to allow cloning.
