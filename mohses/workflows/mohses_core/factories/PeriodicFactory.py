@@ -15,7 +15,10 @@ def periodic_factory( repo=r'https://github.com/StevenAWhite/Mohses_Refactor.git
   factory =  create_specified_factory(repo=repo
                                       ,fallback_commit=branch 
                                    ,crossCompile=isCrossBuild)
-
+  
   addStep_build_libraries(factory)
+  if not isCrossBuild :
+    addStep_native_bundle(factory)
+  
   return factory
 

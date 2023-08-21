@@ -87,9 +87,9 @@ def builders(workers):
          util.BuilderConfig(name="mohses_core_linux_aarch64"
            ,workernames=workers['linux']['aarch64']
            ,tags=["mohses","tracked","linux","gcc","aarch64"]
-           ,factory=tracked_factory(repo=mohses_repo, branch='trunk', runUnitTest=False)
+           ,factory=tracked_factory(repo=mohses_repo, branch='trunk', isCrossBuild=True, runUnitTest=False)
            ,properties={'generator':'Ninja'
-                        ,'cross':'false'
+                        ,'cross':'true'
                         ,'os':'linux'
                         ,'arch':'aarch64'
                         ,'parallel_limit' : ''
@@ -101,9 +101,9 @@ def builders(workers):
          util.BuilderConfig(name="nightly_mohses_core_linux_aarch64"
            ,workernames=workers['linux']['aarch64']
            ,tags=["mohses","nightly","linux","gcc","aarch64"]
-           ,factory=periodic_factory(repo=mohses_repo, branch='trunk', runUnitTest=False, isDaily=True, isWeekly=True, isMonthly=True)
+           ,factory=periodic_factory(repo=mohses_repo, branch='trunk', isCrossBuild=True, runUnitTest=False, isDaily=True, isWeekly=True, isMonthly=True)
            ,properties={'generator':'Ninja'
-                        ,'cross':'false'
+                        ,'cross':'true'
                         ,'os':'linux'
                         ,'arch':'amd64'
                         ,'parallel_limit' : ''
