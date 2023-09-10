@@ -3,7 +3,7 @@ import os
 from twisted.application import service
 from buildbot.master import BuildMaster
 
-basedir = '/home/sawhite/development/mohses_buildbot/mohses-ci'
+basedir = os.path.dirname(os.path.realpath(__file__))
 rotateLength = 10000000
 maxRotatedFiles = 10
 configfile = 'master.cfg'
