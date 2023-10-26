@@ -6,7 +6,9 @@ The purpose of this repo is to avoid a loss of configuration files due to rm -rf
 # Usuage
 The easiest way to use this REPO is with virtualenv from python3.9. You can run this on any OS, but it works best on POSIX like oses like macos and linux.
 
-Install Python 3.9
+## Install Python 3.9
+
+```
 pip3.9 install virtual env
 python3.9 -m venv path/to/env
 cd path/to/env
@@ -19,7 +21,10 @@ pip3 install lz4
 Edit specifics in biogears/buildbot.py
 Edit specifics in buildbot.tac
 
+buildbot upgrade-master
 buildbot start
+```
+
 
 Each build-worker will need to then be setup with a python3.9 virtual environent with buildbot-worker. 
 Each machine including master will need some method of starting the services at startup to avoid disruption and 
