@@ -132,7 +132,6 @@ def addStep_build_unittests(factory):
                                           ,util.Interpolate("%(prop:builddir)s/build") 
                                           ,"--config", "Release"
                                           ,"--target", "unittest"
-                  #                       ,"--parallel", util.Interpolate("%(prop:parallel_jobs)s")
                                           ]
                        ,name="Build unittest"
                        ,warningPattern="^Warning: "
@@ -146,7 +145,6 @@ def addStep_build_all(factory):
   factory.addStep(steps.Compile(command=["cmake", "--build"
                                           ,util.Interpolate("%(prop:builddir)s/build") 
                                           ,"--config", "Release"
-                   #                       ,"--parallel", util.Interpolate("%(prop:parallel_jobs)s")
                                           ]
                        ,name="Build all other targets"
                        ,warningPattern="^Warning: "
@@ -161,7 +159,6 @@ def addStep_build_gather_runtime_dependencies(factory):
                                           ,util.Interpolate("%(prop:builddir)s/build") 
                                           ,"--config", "Release"
                                           ,"--target", "create_distribution_bundle"
-                                          ,"--parallel", util.Interpolate("%(prop:parallel_jobs)s")
                                           ]
                         ,name="Staging Runtime Dir"
                         ,warningPattern="^Warning: "
@@ -190,7 +187,6 @@ def addStep_native_bundle(factory):
                                           ,util.Interpolate("%(prop:builddir)s/build") 
                                           ,"--config", "Release"
                                           ,"--target", "install"
-                                          ,"--parallel", util.Interpolate("%(prop:parallel_jobs)s")
                                           ]
                         ,name="Staging Runtime Dir"
                         ,warningPattern="^Warning: "
